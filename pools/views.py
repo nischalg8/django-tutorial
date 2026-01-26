@@ -1,8 +1,12 @@
 from django.shortcuts import render
 
-from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("Hello, world. you're   \
-                        at the pools index")
+    return render(request, 'pools/home.html')
+
+# def about(request):
+#     return HttpResponse("This is the about page")
+
+# def contact(request):
+#     return HttpResponse("This is contact page");
 
