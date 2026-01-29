@@ -1,12 +1,13 @@
 from django.shortcuts import render
+from .models import Questions, Choice
+from django.shortcuts import get_object_or_404
 
 
 def index(request):
-    return render(request, 'pools/home.html')
+    questions = Questions.objects.all() 
+    return render(request, 'pools/home.html', {'questions': questions}) 
 
-# def about(request):
-#     return HttpResponse("This is the about page")
-
-# def contact(request):
-#     return HttpResponse("This is contact page");
-
+def question_detail(request, question_id):
+    
+    query = get_object_or_404(Questions, pk=question_id)
+    return render(request, 'pools/question_details.html', {'questions': query})

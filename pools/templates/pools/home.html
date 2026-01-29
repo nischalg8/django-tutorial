@@ -109,4 +109,49 @@
     <p>© 2026 Nischal Ghimire</p>
 </footer>
 
+
+
+{% for question in questions %}
+   
+     <div class="question-item">
+    <div class="bg-blue-800 p-5 rounded text-white space-y-3">
+
+        {% if question.image %}
+            <img
+                src="{{ question.image.url }}"
+                alt="Question image"
+                class="w-full max-h-64 object-cover rounded"
+            >
+        {% endif %}
+
+        <h3 class="text-2xl font-bold">
+            {{ question.question_text }}
+        </h3>
+
+        <p class="text-sm text-gray-200">
+            {{ question.pub_date }}
+        </p>
+
+        <a href="{% url 'question_detail' question.id%}">
+            <button
+                type="button"
+                class="inline-flex items-center justify-center
+                       w-[400px] h-[50px]
+                       px-4 py-2
+                       text-sm font-medium
+                       rounded-md
+                       text-white
+                       bg-orange-600 hover:bg-orange-700
+                       transition"
+            >
+                View Question
+            </button>
+        </a>
+
+    </div>
+</div>
+
+
+{% endfor  %}
 {% endblock %}
+
