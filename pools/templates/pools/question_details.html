@@ -9,9 +9,11 @@
 <footer>
     <p>© 2026 Nischal Ghimire</p>
 </footer>
+<div>
+<h3> {{questions.question_text}}</h3>
+<p>{{questions.pub_date}}</p>
+<img src='{{questions.image.url}}' alt='this is question image'>
+<div>
 
-<h3> question.question_text</h3>
-<p>question.pub_date</p>
-<img src='{{question.image}}' alt='this is question image'>
 {% endblock %}
 
