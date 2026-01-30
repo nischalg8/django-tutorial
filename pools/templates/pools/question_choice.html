@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+test content for form
+
+<form method='POST'>
+    {% csrf_token %}
+    {{form}}
+    <button type='submit'>Search Questions</button>
+</form>
+
+{% if question%}
+    <h2>Questions for the selected choice</h2>
+    <ul>
+        {{question}}
+    </ul>
+{% endif  %}
+{% endblock  %}
